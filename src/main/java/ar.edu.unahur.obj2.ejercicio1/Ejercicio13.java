@@ -1,5 +1,6 @@
 package ar.edu.unahur.obj2.ejercicio1;
 
+import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -8,6 +9,7 @@ public class Ejercicio13 {
         double[] tempXHora = new double[24];
         double auxTempMin = 100, auxTempMax = -100,sumador = 0 ;
         Scanner scanner = new Scanner(System.in);
+        DecimalFormat df = new DecimalFormat("#.00");
 
         for (int i = 0; i < 24; i++){
             System.out.println("ingrese la temperatura");
@@ -29,17 +31,15 @@ public class Ejercicio13 {
             }
 
             if (tempXHora[i] == auxTempMax){
-                System.out.println(tempXHora[i] + " --> MAX");
+                System.out.println(df.format(tempXHora[i]) + " --> MAX");
             }
             else if (tempXHora[i] == auxTempMin){
-                System.out.println(tempXHora[i] + " --> MIN");
+                System.out.println(df.format(tempXHora[i]) + " --> MIN");
             }
             else {
-                System.out.println(tempXHora[i]);
+                System.out.println(df.format(tempXHora[i]));
             }
-
-// FALTA PROMEDIO
         }
-        System.out.println("promedio :" + sumador / 24);
+        System.out.println("promedio :" + df.format(sumador / 24));
     }
 }
