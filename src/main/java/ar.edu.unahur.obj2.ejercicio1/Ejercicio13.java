@@ -6,12 +6,13 @@ import java.util.Scanner;
 public class Ejercicio13 {
     public static void main(String[] args){
         double[] tempXHora = new double[24];
-        double auxTempMin = 100, auxTempMax = -100,sumador ;
+        double auxTempMin = 100, auxTempMax = -100,sumador = 0 ;
         Scanner scanner = new Scanner(System.in);
 
         for (int i = 0; i < 24; i++){
             System.out.println("ingrese la temperatura");
             tempXHora[i]=scanner.nextDouble();
+            sumador = sumador + tempXHora[i];
             if (tempXHora[i] > auxTempMax){
                 auxTempMax = tempXHora[i];
             }
@@ -36,7 +37,9 @@ public class Ejercicio13 {
             else {
                 System.out.println(tempXHora[i]);
             }
+
 // FALTA PROMEDIO
         }
+        System.out.println("promedio :" + sumador / 24);
     }
 }
